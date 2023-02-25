@@ -2800,8 +2800,10 @@ public class ImsManager implements FeatureUpdates {
         if (getSubId() != c.getSubId()) {
             logi("Trying to get MmTelFeature when it is still setting up, curr subId=" + getSubId()
                     + ", target subId=" + c.getSubId());
-            throw new ImsException("Service is still initializing",
-                    ImsReasonInfo.CODE_LOCAL_IMS_SERVICE_DOWN);
+
+	    c.setSubId(getSubId());
+            //throw new ImsException("Service is still initializing",
+             //       ImsReasonInfo.CODE_LOCAL_IMS_SERVICE_DOWN);
         }
         return c;
     }

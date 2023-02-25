@@ -43,7 +43,7 @@ public abstract class FeatureConnection {
     protected static boolean sImsSupportedOnDevice = true;
 
     protected final int mSlotId;
-    protected final int mSubId;
+    protected int mSubId;
     protected Context mContext;
     protected IBinder mBinder;
 
@@ -227,6 +227,10 @@ public abstract class FeatureConnection {
 
     public int getSubId() {
         return mSubId;
+    }
+
+    public void setSubId(int subId) {
+        mSubId = subId;
     }
 
     /**
